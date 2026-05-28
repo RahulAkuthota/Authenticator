@@ -42,7 +42,7 @@ export default function Dashboard() {
     e.preventDefault();
     try {
       const token = localStorage.getItem('dev_token');
-      const res = await fetch('https://authenticator-u0v4.onrender.com/create', {
+      const res = await fetch('https://authenticator-u0v4.onrender.com/app/create', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
