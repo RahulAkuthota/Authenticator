@@ -41,7 +41,7 @@ export default function Docs() {
           <h2 className="title" style={{ fontSize: '20px', marginBottom: '16px' }}>1. Installation</h2>
           <p style={{ marginBottom: '16px', color: 'var(--text-muted)' }}>Install our SDKs via npm to get started quickly.</p>
           <pre style={{ padding: '16px', background: 'var(--bg-color)', borderRadius: '8px', fontSize: '14px', overflowX: 'auto', marginBottom: '32px' }}>
-            <code>npm install authenticator-react authenticator-sdk</code>
+            <code>npm install authenticator-react rahulakuthota-authenticator-sdk</code>
           </pre>
 
           <h2 className="title" style={{ fontSize: '20px', marginBottom: '16px' }}>2. Setup Provider</h2>
