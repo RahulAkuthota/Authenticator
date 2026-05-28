@@ -21,7 +21,7 @@ const requireClientId = async (req, res, next) => {
   }
 };
 
-router.post('/signup', requireClientId, async (req, res) => {
+router.post('app/signup', requireClientId, async (req, res) => {
   try {
     const { email, password } = req.body;
     if (!email || !password) return res.status(400).json({ error: 'Email and password required' });
@@ -47,7 +47,7 @@ router.post('/signup', requireClientId, async (req, res) => {
   }
 });
 
-router.post('/login', requireClientId, async (req, res) => {
+router.post('app/login', requireClientId, async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email, appId: req.app._id });
@@ -72,7 +72,7 @@ router.post('/login', requireClientId, async (req, res) => {
   }
 });
 
-router.post('/refresh', async (req, res) => {
+router.post('app/refresh', async (req, res) => {
   try {
     const { refreshToken } = req.body;
     if (!refreshToken) return res.status(400).json({ error: 'refreshToken is required' });
@@ -101,11 +101,11 @@ router.post('/refresh', async (req, res) => {
   }
 });
 
-router.get('/me', requireUserAuth, (req, res) => {
+router.get('app/me', requireUserAuth, (req, res) => {
   res.json({ user: { id: req.user._id, email: req.user.email } });
 });
 
-router.post('/logout', async (req, res) => {
+router.post('app/logout', async (req, res) => {
   try {
     const { refreshToken } = req.body;
     if (refreshToken) {

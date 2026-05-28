@@ -3,7 +3,7 @@ const router = express.Router();
 const Developer = require('../models/Developer');
 const { generateToken } = require('../utils/auth');
 
-router.post('/signup', async (req, res) => {
+router.post('app/signup', async (req, res) => {
   try {
     const { email, password, name } = req.body;
     if (!email || !password || !name) {
@@ -28,7 +28,7 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-router.post('/login', async (req, res) => {
+router.post('app/login', async (req, res) => {
   try {
     const { email, password } = req.body;
     const dev = await Developer.findOne({ email });

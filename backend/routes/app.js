@@ -6,7 +6,7 @@ const crypto = require('crypto');
 
 router.use(requireDevAuth);
 
-router.post('/create', async (req, res) => {
+router.post('app/create', async (req, res) => {
   try {
     const { name } = req.body;
     if (!name) return res.status(400).json({ error: 'Application name is required' });
@@ -30,7 +30,7 @@ router.post('/create', async (req, res) => {
   }
 });
 
-router.get('/list', async (req, res) => {
+router.get('app/list', async (req, res) => {
   try {
     const apps = await Application.find({ developerId: req.developer._id }).sort({ createdAt: -1 });
     res.json({ apps });
