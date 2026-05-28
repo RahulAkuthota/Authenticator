@@ -14,7 +14,7 @@ export default function Signup() {
     setError('');
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/dev/signup', {
+      const res = await fetch('https://authenticator-u0v4.onrender.com/dev/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, password })

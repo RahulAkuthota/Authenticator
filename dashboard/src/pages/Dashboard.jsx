@@ -19,7 +19,7 @@ export default function Dashboard() {
   const fetchApps = async () => {
     try {
       const token = localStorage.getItem('dev_token');
-      const res = await fetch('http://localhost:5000/app/list', {
+      const res = await fetch('https://authenticator-u0v4.onrender.com/app/list', {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.status === 401 || res.status === 403) {
@@ -42,7 +42,7 @@ export default function Dashboard() {
     e.preventDefault();
     try {
       const token = localStorage.getItem('dev_token');
-      const res = await fetch('http://localhost:5000/app/create', {
+      const res = await fetch('https://authenticator-u0v4.onrender.com/create', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -193,7 +193,7 @@ function App() {
   return (
     <AuthenticatorProvider 
       clientId="${selectedApp.clientId}"
-      baseURL="http://localhost:5000"
+      baseURL="https://authenticator-u0v4.onrender.com"
     >
       <AuthSignIn />
     </AuthenticatorProvider>

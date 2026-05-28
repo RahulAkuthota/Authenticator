@@ -54,7 +54,7 @@ function App() {
   return (
     <AuthenticatorProvider 
       clientId="YOUR_CLIENT_ID"
-      baseURL="https://your-backend-url.com"
+      baseURL="https://authenticator-u0v4.onrender.com"
     >
       <YourApp />
     </AuthenticatorProvider>
